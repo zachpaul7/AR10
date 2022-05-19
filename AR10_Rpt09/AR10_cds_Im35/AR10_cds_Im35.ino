@@ -86,7 +86,7 @@ void loop(){
 }
 
 double luminosity (int RawADC0){
-  double Vout = RawADC0*5.5/1023;
+  double Vout = RawADC0*5.0/1023;
   double lux=(2500/Vout-500)/10;
   return lux;
 }
