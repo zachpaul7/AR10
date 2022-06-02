@@ -61,16 +61,17 @@ void setup()
 
 void loop()
 {
+      
   // 수신된 코드가 있을 때 실행한다.
   if (irrecv.decode(&results)){
     // 0xFFFFFFFF 값을 제외하고 출력한다.
-     lcd.setCursor(0,0);
-      lcd.print("              ");
-     lcd.setCursor(0,1);
-     lcd.print("              ");
+     
     if(results.value != 0xFFFFFFFF){
       // 수신된 코드가 on1과 같을 때
-      
+      lcd.setCursor(0,0);
+      lcd.print("              ");
+      lcd.setCursor(0,1);
+      lcd.print("              ");
       if(results.value == on1){
       	digitalWrite(led1, HIGH);
         Serial.println("LED1 is ON");
