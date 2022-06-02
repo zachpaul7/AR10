@@ -64,7 +64,10 @@ void loop()
   // 수신된 코드가 있을 때 실행한다.
   if (irrecv.decode(&results)){
     // 0xFFFFFFFF 값을 제외하고 출력한다.
-     
+     lcd.setCursor(0,0);
+      lcd.print("              ");
+     lcd.setCursor(0,1);
+     lcd.print("              ");
     if(results.value != 0xFFFFFFFF){
       // 수신된 코드가 on1과 같을 때
       
@@ -141,11 +144,7 @@ void loop()
         lcd.print("0xFF4AB5");
       }
     };
-    lcd.setCursor(0,0);
-      lcd.print("              ");
-      lcd.setCursor(0,1);
-      lcd.print("              ");
-      
+    
     
     // 다음 수신을 위해서 준비한다.
     irrecv.resume();
